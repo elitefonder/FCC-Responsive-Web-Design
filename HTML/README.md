@@ -1,1 +1,1 @@
-![](cat.png)
+![](cat_photo.gif)
