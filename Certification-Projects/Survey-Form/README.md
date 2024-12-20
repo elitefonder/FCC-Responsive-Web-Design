@@ -1,1 +1,1 @@
-![](survey-form.gif)
+![](survey_form.gif)
