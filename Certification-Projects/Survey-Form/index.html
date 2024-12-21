@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the platform.</p>
+<form action="" id="survey-form">
+    <label id="name-label" for="">
+        Enter your name:
+          <input  class="user-input" id="name" type="text" name="name" id="name" placeholder="enter name" required>
+    </label>
+  <label id="email-label" for="">
+    Enter your email:<input  class="user-input" id="email" type="email" name="email" id="email" placeholder="enter email" required> 
+  </label>
+ 
+<label id="number-label" for="">
+  Age(optional):
+          <input class="user-input" id="number" min="5" max="10" type="number" name="number" id="number" placeholder="enter age">
+    </label>
+  
+    <label for="dropdown">Which option best describes your current role?
+        <select id="dropdown">
+          <option value="">Select current role</option>
+          <option value="student">Student</option>
+          <option value="job">Full Time Job</option>
+          <option value="learner">Full Time Learner</option>
+          <option value="preferNo">Prefer Not to say</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+
+    <label>Would you recommend freeCodeCamp to a friend?</label>
+ 
+    <fieldset>
+      <label for="yes"><input value="yes" id="yes" type="radio" name="recommend" class="inline choice" checked /> Yes Definitely</label>
+      <br>
+      <label for="no"><input  value="no" id="no" type="radio" name="recommend" class="inline choice" /> Unfortunately No</label>
+    </fieldset>
+      
+
+    <label for="second-dropdown">What is your favorite feature of freeCodeCamp?
+<select id="second-dropdown">
+  <option value="">Select favorite feature</option>
+  <option value="challenges">Challenges</option>
+  <option value="projects">Projects</option>
+  <option value="community">Community</option>
+  <option value="opensource">Open Source</option>
+</select>
+</label>
+
+
+    <div class="form-group">
+      <p>
+        What would you like to see improved?
+      </p>
+      <label for="prefer">
+        <input value="prefer" type="checkbox" class="inline" name="prefer" id="">Front-End Projects
+      </label>
+
+      <label for="prefer">
+        <input value="prefer" type="checkbox" class="inline" name="prefer" id="">Back-End Projects
+      </label>
+
+      <label for="prefer">
+        <input value="prefer" type="checkbox" class="inline" name="prefer" id="">Data Visualization
+      </label>
+
+      <label for="prefer">
+        <input value="prefer" type="checkbox" class="inline" name="prefer" id="">Challenges
+      </label>
+
+
+      <label for="prefer">
+        <input value="prefer" type="checkbox" class="inline" name="prefer" id="">Open Source Community
+      </label>
+
+      <label for="prefer">
+        <input value="prefer" type="checkbox" class="inline" name="prefer" id="">Gitter help rooms
+      </label>
+
+
+      <label for="prefer">
+        <input value="prefer" type="checkbox" class="inline" name="prefer" id="">Videos
+      </label>
+
+      <label for="prefer">
+        <input value="prefer" type="checkbox" class="inline" name="prefer" id="">City Meetups
+      </label>
+
+      <label for="prefer">
+        <input value="prefer" type="checkbox" class="inline" name="prefer" id="">Wiki
+      </label>
+
+
+      <label for="prefer">
+        <input value="prefer" type="checkbox" class="inline" name="prefer" id="">Forum
+      </label>
+
+
+      <label for="prefer">
+        <input value="prefer" type="checkbox" class="inline" name="prefer" id="">Additional Courses
+      </label>
+
+    </div>
+
+    <label for="referrer">How did you hear about us?
+      <select id="referrer" name="referrer">
+        <option value="" id="option-default">(select one)</option>
+        <option value="1">freeCodeCamp News</option>
+        <option value="2">freeCodeCamp YouTube Channel</option>
+        <option value="3">freeCodeCamp Forum</option>
+        <option value="4">Other</option>
+      </select>
+    </label>
+    
+    <label for="bio">
+      Any comments or suggestions?
+      <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+    </label>
+      
+    <button id="submit">Submit</button>
+</form>
+  </div>
+    
+</body>
+</html>
