@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Documentation Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body>
+<nav id="navbar">
+  <header id="navbar-header" class="header">
+    <figure id="img-div">
+      <img id="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/701px-Python-logo-notext.svg.png">
+    </figure>
+    <h1 id="header-title">C2 Server Documentation</h1>
+  </header>
+<ul>
+<li><a class="nav-link" href="#Introduction" class="nav-link">Introduction</a></li>
+<li><a class="nav-link" href="#Technical_Requirements-header" class="nav-link">Technical Requirements</a></li>
+<li><a class="nav-link" href="#What_We_Will_Build-header" class="nav-link">What We Will Build</a></li>
+<li><a class="nav-link" href="#Building_the_C2_Server-header" class="nav-link">Building The C2 Server</a></li>
+<li><a class="nav-link" href="#Building_the_Client-header" class="nav-link">Building The Client</a></li>
+</ul>
+</nav>
+
+  <main id="main-doc">
+<section id="Introduction" class="main-section">
+  <header class="intro-header">
+    <h2 class="text-left">Deconstructing C2 Server: The Brain of Botnets</h2>
+  </header>
+
+  <article id="first-article">
+    <img class="section-img inner-left" src="c2-server.png">
+    <h2 class="text-left">Introduction</h2>
+    <p class="article-text text-dark"></p>
+      <h3 class="subheader-text">What is a C2 server?</h3>
+      <p class="article-text text-dark">
+        C2 servers are the command and control centers for botnets, enabling attackers to remotely manage and control infected devices.
+      </p>
+      <p class="article-text">
+        <span class="bold">Disclaimer:</span> This information is provided for educational and research purposes only. Creating and using C2 servers for malicious activities is illegal and unethical.
+      </p>
+
+      <h3 class="subheader-text">Why create a C2 Server?</h3>
+      <p class="article-text text-dark">
+        My purpose of creating a C2 Server was initially for learning experience and to learn how C2 Servers are made. It gives developers such as myself, idea on how to create communication between client and server and then manage individual clients.
+
+      </p>
+
+
+
+    </article>
+</section>
+
+  <section id="Technical_Requirements" class="main-section">
+    <header id="Technical_Requirements-header">
+     <h2 class="text-left">  Technical Requirements</h2>
+    </header>
+    <article id="second-article">
+      <p class="article-text text-dark">These are the requirements needed in order to create the C2 Server:</p>
+      <ul>
+        <li class="requirements-list inner-left">Code Editor / IDE</li>
+        <li class="requirements-list inner-left">Python 3.0+</li>
+        <li class="requirements-list inner-left">PostgreSQL</li>
+      </ul>
+      
+      <h3 class="subheader-text">Code Editor / IDE</h3>
+      <p class="article-text text-dark">
+        You can use any code editor but i recommend<a href="https://code.visualstudio.com/"> Visual Studio Code</a>.
+        Since Visual Studio Code is customizable and you can install various extensions to suit your needs.
+      
+      </p>
+      
+    
+    <img class="section-img inner-left" src="vscode.png" alt="" srcset="">
+
+
+      <h3 class="subheader-text">Python 3.0+</h3>
+      <p class="article-text text-dark">
+        You download Python 3.0+ here:  
+          <a href="https://www.python.org/downloads/">python.org</a>.
+          <br>
+        Much recommended to download the latest version to avoid conflict with installation.
+      </p>
+      <img class="section-img inner-left" src="python-org.png" alt="" srcset="">
+
+
+
+      <h3 class="subheader-text">PostgreSQL</h3>
+      <p class="article-text text-dark">
+        You download PostgreSQL here:  
+          <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">PostgreSQL Downloads</a>.
+          <br>
+        PostgreSQL will be used as our main database. I chose it since it is opensource and uses SQL as it's query language.
+      </p>
+      <img class="section-img inner-left" src="postgres.png" alt="" srcset="">
+
+
+    </article>
+  </section>
+
+
+  <section id="What_We_Will_Build" class="main-section">
+    <header id="What_We_Will_Build-header">
+      <h2 class="text-left"> What We Will Build</h2>
+    </header>
+    <article id="third-article">
+      <p class="article-text text-dark">In this section we will be exploring the different main features of the C2 server.</p>
+        <h3 class="subheader-text">Login Page</h3>
+<img class="section-img inner-left" src="login.png" alt="" srcset="">
+        <p class="article-text text-dark inner-left">
+          Login page to avoid unauthorized access.
+        </p>
+
+
+        <h3 class="subheader-text">Dashboard</h3>
+        <img class="section-img inner-left" src="dashboard.png" alt="" srcset="">
+                <p class="article-text text-dark inner-left">
+                  Dashboard that manages all agents in one place.
+                  It has 2 buttons where you can interact with the agent or delete it.
+                </p>
+      </article>
+
+      <h3 class="subheader-text">Interact Page</h3>
+      <img class="section-img inner-left" src="bot.png" alt="" srcset="">
+              <p class="article-text text-dark inner-left">
+              This page is where you send commands to the PostgreSQL database and the agent will retrieve the value from the database.
+              </p>
+    </article>
+
+  </section>
+
+
+  <section id="Building_the_C2_Server" class="main-section">
+    <header id="Building_the_C2_Server-header">
+       <h2 class="text-left"> Building the C2 Server</h2>
+    </header>
+    <article id="fourth-article">
+      <h3 class="subheader-text">
+        app.py
+      </h3>
+      <p class="article-text text-dark">
+          Here we will create a new file called app.py.
+      </p>
+
+
+      <h3 class="subheader-text">
+        Importing modules
+      </h3>
+      <p class="article-text text-dark">
+          Import various modules from Flask. 
+      </p>
+      <ul class="inner-left">
+        <li>render_template: render html file</li>
+        <li>request: used various request methods</li>
+        <li>redirect: redirect page</li>
+        <li>url_for:  dynamically generate URLs</li>
+        <li>session:  track user login</li>
+        <li>jsonify:  converts python data structures and turn them into a JSON-formatted string</li>
+
+      </ul>
+      <pre class="move-up">
+          <code class="code inner-most-left">
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+      </code>
+      </pre>
+    
+    </article>
+
+  </section>
+  
+
+  <section id="Building_the_Client" class="main-section">
+    <header id="Building_the_Client-header">
+      <h2 class="text-left">Building the Client</h2>
+    </header>
+    <article id="fourth-article">
+      <h3 class="subheader-text">
+        client.psh
+      </h3>
+      <p class="article-text text-dark">
+         This will be the script that the victim will run and we will achieve remote connection.
+
+         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque sunt soluta, facere qui tenetur voluptatibus labore! Cum excepturi obcaecati, dignissimos rem maiores culpa corporis perferendis praesentium impedit mollitia officiis, ipsum eligendi doloribus nostrum debitis voluptates quos, hic inventore provident neque at? Esse nihil sint veniam dolores blanditiis dolorum quisquam illum?
+      </p>
+    
+
+    </article>
+
+    
+
+  </section>
+
+</main>
+
+
+<script>hljs.highlightAll();</script>
+</body>
+</html>
